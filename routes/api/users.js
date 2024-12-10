@@ -31,9 +31,9 @@ router.post("/signup", async (req, res, next) => {
     });
     await newUser.setPassword(password);
     await emailSender(
-      `<h3>Hello</h3><p>Verify your email.</p><a href="http://localhost:3000/api/users/verify/${newUser.verificationToken}">Click here</a>`,
-      "Verify message",
-      newUser.email
+      newUser.email,
+      "Verify email",
+      `<h3>Hello!</h3><br><p>Please verify your email.</p><a href="http://localhost:3000/api/users/verify/${newUser.verificationToken}">Click here</a>`
     );
     await newUser.save();
     return res.status(201).json({

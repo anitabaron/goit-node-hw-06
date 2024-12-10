@@ -26,6 +26,4 @@ const emailSender = async (to, subject, html) => {
   console.log("Message sent");
 };
 
-// emailSender("anitka.ba@gmail.com", "hello world", "hello test");
-
 module.exports = { emailSender };
